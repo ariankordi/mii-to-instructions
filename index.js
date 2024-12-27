@@ -9,6 +9,7 @@ const flip = require('./flip.json');
 const mouthColor = require('./mouthColor.json');
 const parsedrotation = require('./rotation.json');
 const icons = require('./icons.json');
+const defaults = require('./defaults.json');
 
 console.log(map);
 console.log(flip);
@@ -381,16 +382,16 @@ const supportedFormatsTable = [
         // .charinfo/.ufsd/nn::mii::CharInfo (Switch)
         sizes: [88],
         ctor: ufsd,
-        defaultM: 'defaultM.ufsd',
-        defaultF: 'defaultF.ufsd'
+        defaultM: defaults.ufsd.male,
+        defaultF: defaults.ufsd.female
     },
     {
         // mii studio decoded URL format/LocalStorage format
         sizes: [46],
         // wrapper to name fields the way the logic expects
         ctor: mnmsCtorAndAssignFacialHairFromBeardFields,
-        defaultM: 'defaultM.mnms',
-        defaultF: 'defaultF.mnms'
+        defaultM: defaults.mnms.male,
+        defaultF: defaults.mnms.female
     },
     {
         // .nfsd/nn::mii::StoreData
@@ -398,8 +399,8 @@ const supportedFormatsTable = [
         // .nfcd/nn::mii::CoreData (Switch)
                 48],
         ctor: nfsd,
-        defaultM: 'defaultM.nfsd',
-        defaultF: 'defaultF.nfsd'
+        defaultM: defaults.nfsd.male,
+        defaultF: defaults.nfsd.female
     },
 ];
 
