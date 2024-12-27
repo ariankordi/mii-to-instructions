@@ -74,10 +74,16 @@ function generateInstructions(parsedFile, parsedDefaultM, parsedDefaultF) {
     var head;
     if (parsedFile.gender == 0) {
         defaultFile = parsedDefaultM;
-        head = "<div class='instructions'>\n<p class='startfromscratch'>Start a new character from scratch on your Switch and make these changes.</p>\n<table class='instructions'>\n<tbody><tr><th valign='top' align='right' style='font-size:20'>Gender</th><td class='icon'><img src='./male.png' alt='male' width='45' height='45' class='icon'></td><td>Male</td></tr>\n";
+        head = "<div class='instructions'>\n<p class='startfromscratch'>Start a new character from scratch on your Switch and make these changes.</p>\n<table class='instructions'>\n<tbody><tr><th valign='top' align='right' style='font-size:20'>Gender</th><td class='icon'>";
+        head += icons.gender[0];
+        //<img src='./male.png' alt='male' width='45' height='45' class='icon'>
+        head += "</td><td>Male</td></tr>\n";
     } else {
         defaultFile = parsedDefaultF;
-        head = "<div class='instructions'>\n<p class='startfromscratch'>Start a new character from scratch on your Switch and make these changes.</p>\n<table class='instructions'>\n<tbody><tr><th valign='top' align='right' style='font-size:20'>Gender</th><td class='icon'><img src='./female.png' alt='female' width='45' height='45' class='icon'></td><td>Female</td></tr>\n";
+        head = "<div class='instructions'>\n<p class='startfromscratch'>Start a new character from scratch on your Switch and make these changes.</p>\n<table class='instructions'>\n<tbody><tr><th valign='top' align='right' style='font-size:20'>Gender</th><td class='icon'>";
+        head += icons.gender[1];
+        //<img src='./female.png' alt='female' width='45' height='45' class='icon'>
+        head += "</td><td>Female</td></tr>\n";
     }
 
     var face = "";
